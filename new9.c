@@ -186,7 +186,7 @@ void createfile(char * path){
             FILE * filepointer = fopen(path2, "w");
             fclose(filepointer);
         }
-    }
+    } printf("success\n");
 }
 
 void cat(){
