@@ -186,7 +186,8 @@ void createfile(char * path){
             FILE * filepointer = fopen(path2, "w");
             fclose(filepointer);
         }
-    } printf("success\n");
+    }
+    printf("success");
 }
 
 void cat(){
@@ -597,7 +598,7 @@ int find2(char string[], char path[], int num){
             fscanf(filepointer, "%s", save);
 
             if(match(string, save) == 1){
-                return (ftell(filepointer) - strlen(save)-1);
+                return (ftell(filepointer) - strlen(save));
                 found = 1;
                 break;
             }
@@ -643,7 +644,7 @@ int find2(char string[], char path[], int num){
             fscanf(filepointer, "%s", save);
 
             if(match(string, save) == 1){
-                pointer[found] = ftell(filepointer) - strlen(save) -1;
+                pointer[found] = ftell(filepointer) - strlen(save);
                 found++;
             }
         }
@@ -694,7 +695,7 @@ int find2(char string[], char path[], int num){
                 found++;
 
             if(found == at_num){
-                return ftell(filepointer) - strlen(save) -1;
+                return ftell(filepointer) - strlen(save);
                 break;
             }
         }
@@ -792,7 +793,7 @@ int find1(char given_str[], char * path, int num){
             fscanf(filepointer, "%s", save);
 
             if(strstr(save, given_str)){
-                return (ftell(filepointer) - strlen(save)-1);
+                return (ftell(filepointer) - strlen(save));
                 found = 1;
                 break;
             }
@@ -839,7 +840,7 @@ int find1(char given_str[], char * path, int num){
             fscanf(filepointer, "%s", save);
 
             if(strstr(save, given_str)){
-                pointer[found] = ftell(filepointer) - strlen(save) -1;
+                pointer[found] = ftell(filepointer) - strlen(save);
                 found++;
             }
         }
@@ -890,7 +891,7 @@ int find1(char given_str[], char * path, int num){
             if(strstr(save, given_str)){
                 found++;
                 if(found == at_num){
-                    return ftell(filepointer) - strlen(save) -1;
+                    return ftell(filepointer) - strlen(save);
                     break;
                 }
             }
@@ -979,7 +980,7 @@ void replace2(char string1[], char string2[], char path[], int num){
             fscanf(filepointer, "%s", save);
 
             if(match(string1, save) == 1){
-                position = (ftell(filepointer) - strlen(save)-1);
+                position = (ftell(filepointer) - strlen(save));
                 size = strlen(save);
                 found = 1;
                 break;
@@ -1023,7 +1024,7 @@ void replace2(char string1[], char string2[], char path[], int num){
                 found++;
 
             if(found == at_num){
-                position = ftell(filepointer) - strlen(save) -1;
+                position = ftell(filepointer) - strlen(save);
                 size = strlen(save);
                 break;
             }
@@ -1127,7 +1128,7 @@ void replace1(char string1[], char string2[], char * path, int num){
             fscanf(filepointer2, "%s", save);
 
             if(strstr(save, string1)){
-                pointer[found] = ftell(filepointer2) - strlen(save) -1;
+                pointer[found] = ftell(filepointer2) - strlen(save);
                 found++;
             }
         }
